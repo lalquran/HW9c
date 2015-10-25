@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
@@ -32,10 +33,16 @@ public class Hash {
 			r = m.get(h);
 			
 			if(r.size() > 1){
-				System.out.print(h);
-				for(String s : r){
-					System.out.print(s);
-					
+				System.out.print(h+ ": ");
+				Iterator<String> itr = r.iterator();
+				while(itr.hasNext()){
+					System.out.print(itr.next());
+					if(itr.hasNext()){
+						System.out.print(", ");
+					}
+					else{
+						System.out.print("\n");
+					}
 				}
 			}
 			
